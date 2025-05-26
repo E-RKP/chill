@@ -174,5 +174,25 @@ function rateProduct(id, oggetto){
   }
 }
 
-rateProduct('hedfcg', {userId: 'ut14ou', rate: 4.5})
+rateProduct('hedfcg', {userId: 'ut14ou', rate: 3})
 console.log(products)
+
+function avgRating (id){
+
+  let somma = 0
+  let aver = 0
+  for (i=0; i<products.length;i++){
+    if (id === products[i]._id){
+      let lol = products[i].ratings
+      for (j=0; j<lol.length;j++){
+        somma = somma+lol[j].rate
+        aver = somma / lol.length
+      }
+    }
+  }
+   
+  console.log(Math.round(aver))
+
+}
+
+avgRating('eedfcf')
