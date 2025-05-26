@@ -53,3 +53,83 @@ azzera.onclick = function azzera (){
   numerino.innerHTML = counterp
   numerono.innerHTML = counterB
 }
+
+    const users = [
+    {
+        _id: 'ab12ex',
+        username: 'Alex',
+        email: 'alex@alex.com',
+        password: '123123',
+        createdAt:'08/01/2020 9:00 AM',
+        isLoggedIn: false
+    },
+    {
+        _id: 'fg12cy',
+        username: 'Asab',
+        email: 'asab@asab.com',
+        password: '123456',
+        createdAt:'08/01/2020 9:30 AM',
+        isLoggedIn: true
+    },
+    {
+        _id: 'zwf8md',
+        username: 'Brook',
+        email: 'brook@brook.com',
+        password: '123111',
+        createdAt:'08/01/2020 9:45 AM',
+        isLoggedIn: true
+    },
+    {
+        _id: 'eefamr',
+        username: 'Martha',
+        email: 'martha@martha.com',
+        password: '123222',
+        createdAt:'08/01/2020 9:50 AM',
+        isLoggedIn: false
+    },
+    {
+        _id: 'ghderc',
+        username: 'Thomas',
+        email: 'thomas@thomas.com',
+        password: '123333',
+        createdAt:'08/01/2020 10:00 AM',
+        isLoggedIn: false
+    }
+    ];
+
+    function signUp (id, use, email, password, creat, islog){
+
+      const newUser = {
+        _id: id,
+        username: use,
+        email: email,
+        password: password,
+        createdAt: creat,
+        isLoggegIn: islog
+      }
+
+      for (i=0; i<users.length;i++){
+        if (newUser._id === users[i]._id || newUser.email === users[i].email){
+          console.log('utente già esistente')
+          return;
+        }
+      }
+
+      users.push(newUser)
+    }
+
+    signUp('jhyr', 'Luca', 'luca@luca.gmail.com', 'ciaociao12', '08/01/2020 10:00 AM', true)
+    console.log(users)
+
+    function signIn(nome, pass){
+
+      for (i=0; i<users.length;i++){
+        if (nome === users[i].username && pass === users[i].password){
+          console.log('Accesso completato')
+         return
+        }
+      }
+      console.log('accesso negato')
+    }
+
+    signIn('Luca', 'ciaociao12')
